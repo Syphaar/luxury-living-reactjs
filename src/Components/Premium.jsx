@@ -1,6 +1,6 @@
 const Premium = ({ aboutRef }) => {
     return (
-        <section ref={aboutRef} id="about">
+        <section ref={aboutRef} id="about" className="overflow-hidden">
             <div className="px-7 py-12 md:py-16 md:px-10 lg:px-16 xl:px-20">
                 <div className="md:flex sm:justify-between">
                     <div className="pb-4 md:pb-0">

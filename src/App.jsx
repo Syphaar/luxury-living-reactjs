@@ -55,7 +55,7 @@ function App() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id); // Set active section ID
-          console.log("Active Section:", entry.target.id);
+          // console.log("Active Section:", entry.target.id);
           // console.log("Active Section:", entry.target.id);
           // console.log("About Ref:", aboutRef?.current);
         }
