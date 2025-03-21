@@ -1,4 +1,5 @@
 import { MdArrowOutward } from "react-icons/md";
+import PropTypes from "prop-types"; // Import prop-types
 
 const Cssgrid = [
     {
@@ -52,6 +53,14 @@ const Property = ({ projectsRef }) => {
             </div>
         </section>
     )
-}
+};
+
+// Define prop types
+Property.propTypes = {
+    projectsRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.any }),
+    ]),
+};
 
 export default Property;

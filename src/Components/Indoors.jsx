@@ -1,4 +1,5 @@
 import { MdArrowOutward } from "react-icons/md";
+import PropTypes from "prop-types"; // Import prop-types
 
 const Designs = [
     {
@@ -65,6 +66,14 @@ const Indoors = ({ servicesRef }) => {
             </div>
         </section>
     )
-}
+};
+
+// Define prop types
+Indoors.propTypes = {
+    servicesRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.any }),
+    ]),
+};
 
 export default Indoors;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"; // Import prop-types
+
 const Premium = ({ aboutRef }) => {
     return (
         <section ref={aboutRef} id="about" className="overflow-hidden">
@@ -19,6 +21,14 @@ const Premium = ({ aboutRef }) => {
             </div>
         </section>
     )
-}
+};
+
+// Define prop types
+Premium.propTypes = {
+    aboutRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.any }),
+    ]),
+};
 
 export default Premium;

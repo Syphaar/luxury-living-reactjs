@@ -1,10 +1,11 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PropTypes from "prop-types"; // Import prop-types
 
 const Information = [
     {
-        id:3,
+        id:1,
         fname: "Nia Adebayo",
         img: "https://res.cloudinary.com/dlcoacdkb/image/upload/v1740656448/nia_qpegtv.jpg",
         review: "Great experience with this website! The listings are high-quality and diverse, and the process was super convenient.",
@@ -98,15 +99,13 @@ function Carousel() {
             <Slider {...settings}>
                 {Information.map((info) => (
                     <div key={info.id} className="h-[435px] text-black rounded-xl border-0 bg-wheat border-black ex:h-[346px] ss:h-[324px] dd:h-[306px] mm:h-[306px] gg:h-[282px] ll:h-[259px] xx:h-[235px] sm:h-[170px] lg:h-[187px] xl:h-[160px]">
-                        <div className="">
-                            <div className="flex flex-col gap-4 w-full p-4">
-                                <p>{info.review}</p>
-                            </div>
-                            <div className="h-16 pl-4 rounded-t-xl sm:flex items-center gap-4">
-                                <img src={info.img} alt="" className="h-12 w-12 rounded-full " />
-                                <p className="text-xl font-semibold">{info.fname}</p>
-                            </div>
-                        </div>
+                          <div className="flex flex-col gap-4 w-full p-4">
+                              <p>{info.review}</p>
+                          </div>
+                          <div className="h-16 pl-4 rounded-t-xl sm:flex items-center gap-4">
+                              <img src={info.img} alt="" className="h-12 w-12 rounded-full " />
+                              <p className="text-xl font-semibold">{info.fname}</p>
+                          </div>
                     </div>
                 ))}
             </Slider>
@@ -114,6 +113,13 @@ function Carousel() {
         </div>
     </section>
   )
-}
+};
+
+// Define PropTypes for Arrow
+Arrow.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.object,
+  onClick: PropTypes.func,
+};
 
 export default Carousel;
